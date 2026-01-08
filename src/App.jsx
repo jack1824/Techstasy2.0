@@ -29,7 +29,7 @@ function App() {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 1.2,
+          duration: 2,
           ease: "power3.out",
         }
       );
@@ -85,7 +85,7 @@ function App() {
           stagger: 0.1,
           scrollTrigger: {
             trigger: "#shifuChat",
-            start: "top 20%",
+            start: "top 40%",
             toggleActions: "play none none reverse", // Changed to reverse when scrolling back up
             once: false,
             // markers: true, // Allows animation to play again when scrolling
@@ -126,6 +126,7 @@ function App() {
         </div>
       </div>
       <NextSection />
+      
     </>
   );
 }

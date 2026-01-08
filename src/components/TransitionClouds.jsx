@@ -1,7 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
 import React from "react";
 
 // Register ScrollTrigger plugin
@@ -11,40 +10,45 @@ function TransitionClouds({ scope }) {
   useGSAP(
     () => {
       const clouds = gsap.utils.toArray("#transition img");
-
+      console.log(clouds);
       // Set initial state
       gsap.set(clouds, {
         xPercent: 0,
         opacity: 1,
       });
 
-      // Animate both clouds with same duration for synchronized movement
-      gsap.to(clouds[0], {
-        xPercent: -120,
-        duration: 1.5, // Changed to match second cloud
-        ease: "power2.inOut",
-        stagger: 0.1,
+      // Create a timeline for synchronized animations
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#transition",
           start: "top center",
           end: "bottom center",
           toggleActions: "play none none reverse",
-          // markers: true, // Uncomment for debugging
+          markers: true, // Remove in production
         },
       });
 
-      gsap.to(clouds[1], {
-        xPercent: 120,
-        duration: 1.5, // Synchronized with first cloud
-        ease: "power2.inOut",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: "#transition",
-          start: "top center",
-          end: "bottom center",
-          toggleActions: "play none none reverse",
+      // Animate both clouds in the same timeline
+      tl.to(
+        clouds[0],
+        {
+          xPercent: -120,
+          duration: 1.5,
+          ease: "sine.out",
         },
-      });
+        0
+      ) // Start at time 0
+        .to(
+          clouds[1],
+          {
+            xPercent: 120,
+            duration: 1.5,
+            ease: "sine.out",
+          },
+          0
+        ); // Also start at time 0 for synchronization
+
+      // Cleanup function is handled automatically by useGSAP
     },
     { scope: scope }
   );
@@ -52,10 +56,20 @@ function TransitionClouds({ scope }) {
   return (
     <div
       id="transition"
-      className="absolute top-0 left-0 w-full h-full z-20 flex justify-between pointer-events-none overflow-hidden"
+      className="absolute top-0 w-full h-full z-20 flex justify-between pointer-events-none overflow-hidden"
     >
-      <img src="cloud01_trans.svg" alt="Left transition cloud" />
-      <img src="cloud02_tran.svg" alt="Right transition cloud" />
+      <div id="clouds" className="relative w-full h-full">
+        <img
+          src="cloud01_trans.svg"
+          alt="Left transition cloud"
+          className="absolute h-full object-fit w-1/2 top-0 left-50"
+        />
+        <img
+          src="cloud02_tran.svg"
+          alt="Right transition cloud"
+          className=" absolute h-full object-fit w-1/2 top-0 right-50"
+        />
+      </div>
     </div>
   );
 }
