@@ -46,13 +46,14 @@ function Navbar() {
   return (
     <nav
       ref={navbar}
-      className="flex justify-between gap-10  text-white text-lg font-semibold fixed w-full z-10 bg-opacity-50 max-h-[10%]"
+      className=" flex justify-between gap-10  text-white text-lg font-semibold fixed w-full z-1000 bg-opacity-50 max-h-[10%]"
     >
       <img className="h-fit" id="staff" src="staff_code.svg" alt="" />
-      <ul className="flex justify-around items-center gap-4 w-[80%] text-2xl font-bold text-shadow-md text">
+      <ul className="flex justify-around items-center gap-4 w-[80%] text-2xl font-bold text-shadow-md text-outline-sm">
         <li className="hover:text-amber-400 cursor-pointer">Home</li>
-        <li className="hover:text-amber-400 cursor-pointer">About</li>
-        <li className="hover:text-amber-400 cursor-pointer">Services</li>
+        <li className="hover:text-amber-400 cursor-pointer">Timeline</li>
+        <li className="hover:text-amber-400 cursor-pointer">Tracks</li>
+        <li className="hover:text-amber-400 cursor-pointer">Sponsers</li>
         <li className="hover:text-amber-400 cursor-pointer">Contact</li>
       </ul>
     </nav>

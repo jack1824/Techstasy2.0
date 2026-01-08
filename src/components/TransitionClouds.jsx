@@ -9,31 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 function TransitionClouds({ scope }) {
   useGSAP(
     () => {
-      const clouds = gsap.utils.toArray("#transition img");
-      console.log(clouds);
+      const clouds = gsap.utils.toArray("#clouds img");
       // Set initial state
       gsap.set(clouds, {
         xPercent: 0,
         opacity: 1,
       });
-
       // Create a timeline for synchronized animations
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#transition",
+          trigger: "#clouds",
           start: "top center",
           end: "bottom center",
           toggleActions: "play none none reverse",
           markers: true, // Remove in production
         },
       });
-
       // Animate both clouds in the same timeline
       tl.to(
         clouds[0],
         {
           xPercent: -120,
-          duration: 1.5,
+          duration: 2,
           ease: "sine.out",
         },
         0
@@ -42,32 +39,31 @@ function TransitionClouds({ scope }) {
           clouds[1],
           {
             xPercent: 120,
-            duration: 1.5,
+            duration: 2,
             ease: "sine.out",
           },
           0
         ); // Also start at time 0 for synchronization
-
       // Cleanup function is handled automatically by useGSAP
     },
-    { scope: scope }
+    { scope: "#transition" }
   );
 
   return (
     <div
       id="transition"
-      className="absolute top-0 w-full h-full z-20 flex justify-between pointer-events-none overflow-hidden"
+      className="absolute top-0 w-full h-full z-20 flex justify-between pointer-events-none overflow-visible"
     >
-      <div id="clouds" className="relative w-full h-full">
+      <div id="clouds" className="relative w-full h-full overflow-visible">
         <img
           src="cloud01_trans.svg"
           alt="Left transition cloud"
-          className="absolute h-full object-fit w-1/2 top-0 left-50"
+          className="absolute h-full object-cover w-full -top-1/4 left-0"
         />
         <img
           src="cloud02_tran.svg"
           alt="Right transition cloud"
-          className=" absolute h-full object-fit w-1/2 top-0 right-50"
+          className="absolute h-full object-cover w-full -top-1/4 right-0"
         />
       </div>
     </div>
