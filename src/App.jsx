@@ -10,11 +10,11 @@ function App() {
   const navbar = useRef(null);
 
   return (
-    <>
+    <div className="overflow-hidden">
       <Navbar />
       <Hero />
       <NextSection />
-    </>
+    </div>
   );
 }
 

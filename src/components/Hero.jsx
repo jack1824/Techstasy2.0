@@ -120,13 +120,21 @@ function Hero() {
         id="characters"
         className="absolute w-full top-50 flex  justify-between "
       >
-        <img className="h-40 sm:h-64 absolute top-70 left-0" src="Monkee_kungfuu.svg" alt="" />
-        <img className="h-40 sm:h-64 absolute -top-20 right-0" src="tigressKungfuuPanda.svg" alt="" />
+        <img
+          className="h-40 sm:h-64 absolute top-70 left-0"
+          src="Monkee_kungfuu.svg"
+          alt=""
+        />
+        <img
+          className="h-40 sm:h-64 absolute -top-20 right-0"
+          src="tigressKungfuuPanda.svg"
+          alt=""
+        />
       </div>
 
       <div
         id="shifuChat"
-        className="fixed bottom-5 left-5 flex items-end w-100 h-100 z-100"
+        className="fixed bottom-5 left-5 flex items-end w-50 h-50 sm:w-100 sm:h-100 z-100"
       >
         <img src="shifuu_Chat.svg" alt="" />
       </div>

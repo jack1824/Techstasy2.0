@@ -20,9 +20,10 @@ function TransitionClouds({ scope }) {
         scrollTrigger: {
           trigger: "#clouds",
           start: "top center",
-          end: "bottom center",
+          end: "20% center",
+          // scrub: true,
           toggleActions: "play none none reverse",
-          markers: true, // Remove in production
+          // markers: true, // Remove in production
         },
       });
       // Animate both clouds in the same timeline
@@ -30,7 +31,7 @@ function TransitionClouds({ scope }) {
         clouds[0],
         {
           xPercent: -120,
-          duration: 2,
+          duration: 3,
           ease: "sine.out",
         },
         0
@@ -39,7 +40,7 @@ function TransitionClouds({ scope }) {
           clouds[1],
           {
             xPercent: 120,
-            duration: 2,
+            duration: 3,
             ease: "sine.out",
           },
           0
@@ -58,12 +59,12 @@ function TransitionClouds({ scope }) {
         <img
           src="cloud01_trans.svg"
           alt="Left transition cloud"
-          className="absolute h-full object-cover w-full -top-1/4 left-0"
+          className="absolute h-full object-contain w-full -top-1/2 sm:-top-1/4 left-0"
         />
         <img
           src="cloud02_tran.svg"
           alt="Right transition cloud"
-          className="absolute h-full object-cover w-full -top-1/4 right-0"
+          className="absolute h-full object-contain w-full -top-1/2 sm:-top-1/4 right-0"
         />
       </div>
     </div>
