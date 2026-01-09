@@ -14,7 +14,7 @@ function NextSection() {
           id="scroll"
           alt=""
         />
-        <div className="absolute -top-10 right-1/4 z-10 flex justify-center items-center">
+        <div className="absolute -top-10 right-1/3 z-10 flex justify-center items-center">
           <img src="scroll_paper.svg " className="" id="scroll" alt="" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 w-full">
             <h2 className="text-4xl md:text-5xl font-black text-center leading-none tracking-wider text-outline-lg font-kungfu uppercase">
