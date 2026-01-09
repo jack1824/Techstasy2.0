@@ -58,6 +58,11 @@ function App() {
       </div>
       <div id="spacer" className="w-full h-[800vh] bg-[#fcc1e1] relative">
         <img
+          src="/bamboo.png"
+          alt="Bamboo"
+          className="absolute -top-10 sm:-top-45 left-0 w-full h-auto z-5"
+        />
+        <img
           src="/pinkcloud.png"
           alt="Clouds"
           className="absolute -top-10 sm:-top-135 left-0 w-full h-auto z-10"
