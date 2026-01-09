@@ -49,7 +49,7 @@ function Navbar() {
       className=" flex justify-between gap-10  text-white text-lg font-semibold fixed w-full z-1000 bg-opacity-50 max-h-[10%]"
     >
       <a href="#">
-        <img className="h-fit" id="staff" src="staff_code.svg" alt="" />
+        <img className="h-fit" id="staff" src="staff_code.svg" alt="" /> 
       </a>
       <ul className="flex justify-around items-center gap-4 w-[80%] text-2xl font-bold text-shadow-md text-outline-sm">
         <li className="hover:text-amber-400 cursor-pointer">Home</li>
