@@ -132,12 +132,12 @@ function Hero() {
         />
       </div>
 
-      <div
+      {/* <div
         id="shifuChat"
-        className="fixed bottom-5 left-5 flex items-end w-50 h-50 sm:w-100 sm:h-100 z-100"
+        className="fixed bottom-5 left-5 flex items-end w-50 h-50 sm:w-100 sm:h-100 scale-z-150"
       >
         <img src="shifuu_Chat.svg" alt="" />
-      </div>
+      </div> */}
     </div>
   );
 }

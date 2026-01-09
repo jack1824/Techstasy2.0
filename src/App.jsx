@@ -95,7 +95,7 @@ function App() {
             alt="Coming Soon"
           />
         </div>
-        <div className="absolute top-[78%] bottom-0 left-0 w-full z-20 flex justify-center items-start">
+        <div className="absolute top-[78%] bottom-0 left-0 w-full  flex justify-center items-start">
           <div className="relative w-full h-full">
             {/* Background Image - Full width, fills remaining space */}
             <img
