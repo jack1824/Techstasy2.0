@@ -51,10 +51,12 @@ function App() {
           <NextSection />
           <PrizeCards />
           <TimelineSection />
-          <TimelineCards/>
+          <TimelineCards />
         </div>
       </div>
-      <div id="spacer" className="w-full h-screen bg-[#fcc1e1]"></div>
+      <div id="spacer" className="w-full h-[800vh] bg-[#fcc1e1] flex justify-center items-center">
+        <img src="/hanging_lantern.svg" className="w-full" alt="Lantern" />
+      </div>
     </div>
   );
 }
