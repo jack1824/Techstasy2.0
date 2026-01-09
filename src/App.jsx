@@ -55,7 +55,7 @@ function App() {
           <TimelineCards />
         </div>
       </div>
-      <div id="spacer" className="w-full h-[800vh] bg-[#fcc1e1] relative flex items-center">
+      <div id="spacer" className="w-full h-[800vh] bg-[#fcc1e1] relative">
         <img
           src="/pinkcloud.png"
           alt="Clouds"
@@ -66,7 +66,11 @@ function App() {
           alt="fight"
           className="absolute top-10 sm:-top-35 left-0 w-full h-auto z-10 scale-60"
         />
-        <img src="/hk_tracks.png" className="w-full z-0" alt="Lantern" />
+        <img
+          src="/hk tracks.png"
+          className="absolute top-[23%] left-0 w-full z-0"
+          alt="HK Tracks"
+        />
 
         {/* Event Cards Section */}
         <div className="absolute top-[12%] left-0 w-full z-20">
