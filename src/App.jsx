@@ -60,7 +60,7 @@ function App() {
           alt="Clouds"
           className="absolute -top-10 sm:-top-135 left-0 w-full h-auto z-10"
         />
-        <img src="/hanging_lantern.svg" className="w-full z-0" alt="Lantern" />
+        <img src="/hk tracks.png" className="w-full z-0" alt="HK Tracks" />
       </div>
     </div>
 
