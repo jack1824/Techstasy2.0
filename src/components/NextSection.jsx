@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import TransitionClouds from "./TransitionClouds";
 
 function NextSection() {
-  const container = useRef(null);
+  const scroll = useRef(null);
   return (
     <section
       ref={container}
