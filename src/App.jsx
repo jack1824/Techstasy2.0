@@ -74,7 +74,7 @@ function App() {
         />
         <img
           src="/hk tracks.png"
-          className="absolute top-[23%] left-0 w-full z-0"
+          className="absolute top-[22%] left-0 w-full z-0"
           alt="HK Tracks"
         />
 
