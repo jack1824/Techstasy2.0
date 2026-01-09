@@ -56,7 +56,7 @@ function App() {
           <TimelineCards />
         </div>
       </div>
-      <div id="spacer" className="w-full h-[800vh] bg-[#fcc1e1] relative">
+      <div id="spacer" className="w-full h-[800vh] bg-[#fed6f0] relative">
         <img
           src="/bamboo.png"
           alt="Bamboo"
@@ -94,6 +94,22 @@ function App() {
             className="w-[25%] h-auto object-contain"
             alt="Coming Soon"
           />
+        </div>
+        <div className="absolute top-[78%] bottom-0 left-0 w-full z-20 flex justify-center items-start">
+          <div className="relative w-full h-full">
+            {/* Background Image - Full width, fills remaining space */}
+            <img
+              src="/oogwayback.png"
+              className="w-full h-full object-cover"
+              alt="Background"
+            />
+            {/* Small Image on top - centered */}
+            <img
+              src="/oogwayq.png"
+              className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[40%] max-w-xl"
+              alt="Oogway Quote"
+            />
+          </div>
         </div>
 
         {/* Event Cards Section */}
