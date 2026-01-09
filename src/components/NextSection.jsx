@@ -4,22 +4,16 @@ import TransitionClouds from "./TransitionClouds";
 function NextSection() {
   const scroll = useRef(null);
   return (
-    <section className=" relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center">
-      <div ref={scroll} id="scroll">
-        <img
-          src="scroll_handle.svg "
-          className=" absolute -top-15 right-1/4 z-20"
-          id="scroll"
-          alt=""
-        />
-        <img
-          src="scroll_paper.svg "
-          className="absolute -top-10 right-1/4 z-10"
-          id="scroll"
-          alt=""
-        />
+    <section
+      ref={container}
+      className="relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex flex-col justify-center items-center"
+    >
+      <TransitionClouds scope={container} />
+
+      {/* Prize Image with spacing    increase mt to make the image go low*/}
+      <div className="mt-580 mb-8">
+        <img src="/PRIZE.png" alt="Prize" className="max-w-full h-auto" style={{ transform: 'scale(1.25)' }} />
       </div>
-      <TransitionClouds scroll={scroll} />
     </section>
   );
 }
