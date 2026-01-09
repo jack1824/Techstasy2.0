@@ -4,6 +4,7 @@ import { useCountdownToMarch112026 } from "../hooks/useCountdown";
 
 function NextSection() {
   const scroll = useRef(null);
+  const lantern = useRef(null);
   const { days, hours, minutes, seconds } = useCountdownToMarch112026();
   return (
     <section className=" relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center">
@@ -29,13 +30,14 @@ function NextSection() {
           </div>
         </div>
       </div>
-      <TransitionClouds scroll={scroll} />
       <img
+      ref={lantern}
         src="lantern.svg "
         className="absolute w-full object-cover z-5 top-10"
         id="lantern"
         alt=""
       />
+      <TransitionClouds scroll={scroll} lantern={lantern} />
 
       {/* Prize Image */}
     </section>

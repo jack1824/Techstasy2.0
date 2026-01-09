@@ -1,9 +1,27 @@
 import React from "react";
+import Clock from "./svgs/Clock";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 function TimelineSection() {
+  useGSAP(() => {
+    gsap.to("#clock_hands", {
+      rotation: 360,
+      transformOrigin: "50% 50%",
+      repeat: -1,
+      ease: "power0.inOut",
+      duration: 30,
+    });
+    // GSAP animations can be added here if needed in the future
+  });
   return (
-    <section className=" relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center">
-      <img className="absolute left-0" src="Timeline.png" alt="" />
+    <section className="relative w-full h-screen flex justify-center place-items-end py-20">
+      <img
+        className="absolute top-0 left-0"
+        src="./timeLine_props.svg"
+        alt=""
+      />
+      <Clock />
     </section>
   );
 }
