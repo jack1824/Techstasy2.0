@@ -51,11 +51,18 @@ function App() {
           <NextSection />
           <PrizeCards />
           <TimelineSection />
-          <TimelineCards/>
+          <TimelineCards />
         </div>
       </div>
-      <div id="spacer" className="w-full h-screen bg-[#fcc1e1]"></div>
+      <div id="spacer" className="w-full h-screen bg-[#fcc1e1] relative">
+        <img
+          src="/pinkcloud.png"
+          alt="Clouds"
+          className="absolute -top-135 left-0 w-full h-auto"
+        />
+      </div>
     </div>
+
   );
 }
 
