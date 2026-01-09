@@ -6,7 +6,7 @@ import React from "react";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-function TransitionClouds({ scope }) {
+function TransitionClouds({ scroll }) {
   useGSAP(
     () => {
       const clouds = gsap.utils.toArray("#clouds img");
@@ -31,7 +31,7 @@ function TransitionClouds({ scope }) {
         clouds[0],
         {
           xPercent: -120,
-          duration: 3,
+          duration: 2,
           ease: "sine.out",
         },
         0
@@ -40,12 +40,33 @@ function TransitionClouds({ scope }) {
           clouds[1],
           {
             xPercent: 120,
-            duration: 3,
+            duration: 2,
             ease: "sine.out",
           },
           0
         ); // Also start at time 0 for synchronization
       // Cleanup function is handled automatically by useGSAP
+      // tl.to(scroll.current.children[0], {
+      //   y: 20,
+      //   ease: "sine.out",
+      //   duration: 0.5,
+      // });
+      tl.fromTo(
+        scroll.current.children[1],
+        {
+          y: -300,
+          ease: "sine.out",
+          duration: 0.5,
+        },
+        {
+          y: 0,
+          ease: "sine.out",
+          duration: 0.5,
+        },
+        "0.35"
+      );
+      {
+      }
     },
     { scope: "#transition" }
   );
