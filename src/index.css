@@ -13,3 +13,12 @@ body {
     -webkit-text-fill-color: white;
   }
 }
+
+@font-face {
+  font-family: "KungFuPanda";
+  src: url("/KungFuPandaRegular-xYjV.ttf") format("truetype");
+}
+
+.font-kungfu {
+  font-family: "KungFuPanda", sans-serif;
+}

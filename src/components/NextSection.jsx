@@ -17,12 +17,12 @@ function NextSection() {
         <div className="absolute -top-10 right-1/4 z-10 flex justify-center items-center">
           <img src="scroll_paper.svg " className="" id="scroll" alt="" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 w-full">
-            <h2 className="text-4xl md:text-5xl font-black text-center leading-none tracking-wider text-outline-lg font-[impact] uppercase">
+            <h2 className="text-4xl md:text-5xl font-black text-center leading-none tracking-wider text-outline-lg font-kungfu uppercase">
               HACKATHON <br /> STARTS IN
             </h2>
 
-            <div className="bg-white border-4 border-black rounded-full px-8 py-2 md:px-12 md:py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <span className="text-2xl md:text-4xl font-black tracking-widest font-[impact]">
+            <div className="bg-white border-4 border-black rounded-full px-6 py-1 md:px-10 md:py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <span className="text-xl md:text-3xl font-black tracking-widest font-kungfu">
                 {days}D {hours}H {minutes}M {seconds}S
               </span>
             </div>
