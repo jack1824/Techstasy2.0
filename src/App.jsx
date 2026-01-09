@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import TimelineSection from "./components/TimelineSection";
 import PrizeCards from "./components/PrizeCards";
 import TimelineCards from "./components/TimelineCards";
+import EventCards from "./components/EventCards";
 
 function App() {
   const scroll = useRef(null);
@@ -60,7 +61,17 @@ function App() {
           alt="Clouds"
           className="absolute -top-10 sm:-top-135 left-0 w-full h-auto z-10"
         />
-        <img src="/hk tracks.png" className="w-full z-0" alt="HK Tracks" />
+        <img
+          src="/fightclub.png"
+          alt="fight"
+          className="absolute top-10 sm:-top-35 left-0 w-full h-auto z-10 scale-60"
+        />
+        <img src="/hk_tracks.png" className="w-full z-0" alt="Lantern" />
+
+        {/* Event Cards Section */}
+        <div className="absolute top-[12%] left-0 w-full z-20">
+          <EventCards />
+        </div>
       </div>
     </div>
 
