@@ -6,7 +6,7 @@ function NextSection() {
   return (
     <section
       ref={container}
-      className=" relative w-full h-screen bg-[url(./second_bg.jpg)] bg-no-repeat bg-center bg-cover flex justify-center items-center"
+      className=" relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center"
     >
       <TransitionClouds scope={container} />
     </section>

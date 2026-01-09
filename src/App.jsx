@@ -13,7 +13,14 @@ function App() {
     <div className="overflow-hidden">
       <Navbar />
       <Hero />
-      <NextSection />
+      <div id="blue" className="relative w-full">
+        <img src="scroll_handle" className="absolute top-0 right-50" alt="" />
+        <img src="/long_blue_bg_clouds.png" alt="" className="w-full block" />
+
+        <div className="absolute inset-0">
+          <NextSection />
+        </div>
+      </div>
     </div>
   );
 }
