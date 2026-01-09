@@ -80,12 +80,12 @@ function TransitionClouds({ scroll }) {
         <img
           src="cloud01_trans.svg"
           alt="Left transition cloud"
-          className="absolute h-full object-contain w-full -top-1/2 sm:-top-1/4 left-0"
+          className="absolute h-full object-contain w-full -top-1/2 sm:-top-1/4 left-0 opacity-50"
         />
         <img
           src="cloud02_tran.svg"
           alt="Right transition cloud"
-          className="absolute h-full object-contain w-full -top-1/2 sm:-top-1/4 right-0"
+          className="absolute h-full object-contain w-full -top-1/2 sm:-top-1/4 right-0 opacity-50"
         />
       </div>
     </div>

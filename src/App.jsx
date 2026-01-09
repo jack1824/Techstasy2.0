@@ -7,6 +7,7 @@ import NextSection from "./components/NextSection";
 import Hero from "./components/Hero";
 import TimelineSection from "./components/TimelineSection";
 import PrizeCards from "./components/PrizeCards";
+import TimelineCards from "./components/TimelineCards";
 
 function App() {
   const scroll = useRef(null);
@@ -50,8 +51,10 @@ function App() {
           <NextSection />
           <PrizeCards />
           <TimelineSection />
+          <TimelineCards/>
         </div>
       </div>
+      <div id="spacer" className="w-full h-screen bg-[#fcc1e1]"></div>
     </div>
   );
 }
