@@ -9,6 +9,7 @@ import TimelineSection from "./components/TimelineSection";
 import PrizeCards from "./components/PrizeCards";
 import TimelineCards from "./components/TimelineCards";
 import EventCards from "./components/EventCards";
+import HackathonTracks from "./components/HackathonTracks";
 
 function App() {
   const scroll = useRef(null);
@@ -71,6 +72,24 @@ function App() {
           className="absolute top-[23%] left-0 w-full z-0"
           alt="HK Tracks"
         />
+
+        <div className="absolute top-[42%] left-0 w-full z-20">
+          <HackathonTracks />
+        </div>
+
+        <img
+          src="/cherry_blossom.png"
+          className="absolute top-[55%] left-0 w-full z-0"
+          alt="Cherry Blossom"
+        />
+
+        <div className="absolute top-[73%] left-1/2 -translate-x-1/2 z-20 flex justify-center w-full">
+          <img
+            src="/comingsoon.png"
+            className="w-[25%] h-auto object-contain"
+            alt="Coming Soon"
+          />
+        </div>
 
         {/* Event Cards Section */}
         <div className="absolute top-[12%] left-0 w-full z-20">
