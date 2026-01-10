@@ -113,7 +113,7 @@ function Hero() {
         id="title"
         className="relative flex justify-center items-center mt-[10%]"
       >
-        <img src="Title_techstacy.svg" alt="" />
+        <img src="techstacy_title.svg" alt="" />
       </div>
 
       <div
