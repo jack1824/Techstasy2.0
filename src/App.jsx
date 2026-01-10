@@ -20,7 +20,7 @@ function App() {
       <div className="relative w-full z-40 pointer-events-none" style={{ height: 0 }}>
         <img
           src="scroll_handle.svg"
-          className="w-[50%] absolute -top-5 sm:-top-15 right-1/4"
+          className="w-[80%] md:w-[50%] absolute -top-2 sm:-top-5 md:-top-15 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-1/4"
           alt="Scroll Handle"
         />
       </div>
@@ -34,21 +34,21 @@ function App() {
           <TimelineCards />
         </div>
       </div>
-      <div id="spacer" className="w-full h-[800vh] bg-[#fed6f0] relative">
+      <div id="spacer" className="w-full h-[500vh] md:h-[800vh] bg-[#fed6f0] relative">
         <img
           src="/bamboo.png"
           alt="Bamboo"
-          className="absolute -top-10 sm:-top-45 left-0 w-full h-auto z-5"
+          className="absolute -top-5 sm:-top-10 md:-top-45 left-0 w-full h-auto z-5"
         />
         <img
           src="/pinkcloud.png"
           alt="Clouds"
-          className="absolute -top-10 sm:-top-135 left-0 w-full h-auto z-10"
+          className="absolute -top-5 sm:-top-10 md:-top-135 left-0 w-full h-auto z-10"
         />
         <img
           src="/fightclub.png"
           alt="fight"
-          className="absolute top-10 sm:-top-35 left-0 w-full h-auto z-10 scale-60"
+          className="absolute top-5 sm:top-10 md:-top-35 left-0 w-full h-auto z-10 scale-50 md:scale-60"
         />
         <img
           src="/hk tracks.png"
@@ -69,7 +69,7 @@ function App() {
         <div className="absolute top-[73%] left-1/2 -translate-x-1/2 z-20 flex justify-center w-full">
           <img
             src="/comingsoon.png"
-            className="w-[25%] h-auto object-contain"
+            className="w-[50%] md:w-[25%] h-auto object-contain"
             alt="Coming Soon"
           />
         </div>
@@ -84,7 +84,7 @@ function App() {
             {/* Small Image on top - centered */}
             <img
               src="/oogwayq.png"
-              className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[40%] max-w-xl"
+              className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[70%] md:w-[40%] max-w-xl"
               alt="Oogway Quote"
             />
           </div>

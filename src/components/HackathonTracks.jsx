@@ -11,8 +11,8 @@ function HackathonTracks() {
     ];
 
     return (
-        <div className="w-full flex justify-center items-center py-10 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 max-w-6xl">
+        <div className="w-full flex justify-center items-center py-6 md:py-10 px-2 md:px-4">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-10 max-w-6xl">
                 {tracks.map((track) => (
                     <div
                         key={track.id}

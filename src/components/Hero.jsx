@@ -111,22 +111,22 @@ function Hero() {
     >
       <div
         id="title"
-        className="relative flex justify-center items-center mt-[10%]"
+        className="relative flex justify-center items-center mt-[15%] md:mt-[10%] px-4"
       >
-        <img src="techstacy_title.svg" alt="" />
+        <img src="techstacy_title.svg" alt="" className="w-[90%] md:w-auto max-w-full" />
       </div>
 
       <div
         id="characters"
-        className="absolute w-full top-50 flex  justify-between "
+        className="absolute w-full top-[60%] md:top-50 flex justify-between"
       >
         <img
-          className="h-40 sm:h-64 absolute top-70 left-0"
+          className="h-20 xs:h-28 sm:h-40 md:h-64 absolute top-20 md:top-70 left-0"
           src="Monkee_kungfuu.svg"
           alt=""
         />
         <img
-          className="h-40 sm:h-64 absolute -top-20 right-0"
+          className="h-20 xs:h-28 sm:h-40 md:h-64 absolute -top-10 md:-top-20 right-0"
           src="tigressKungfuuPanda.svg"
           alt=""
         />

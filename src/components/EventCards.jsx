@@ -38,8 +38,8 @@ function EventCards() {
     };
 
     return (
-        <div className="w-full flex justify-center items-center py-20">
-            <div className="grid grid-cols-2 gap-6 md:gap-30 max-w-5xl px-4">
+        <div className="w-full flex justify-center items-center py-10 md:py-20">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-30 max-w-5xl px-2 md:px-4">
                 {events.map((event) => (
                     <button
                         key={event.id}
