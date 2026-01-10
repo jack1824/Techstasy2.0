@@ -52,7 +52,7 @@ function TransitionClouds({ scroll, lantern }) {
       //   duration: 0.5,
       // });
       tl.fromTo(
-        scroll.current.children[1],
+        scroll.current.children[0],
         {
           y: -500,
           ease: "sine.out",

@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
+
 import Navbar from "./components/Navbar";
 import NextSection from "./components/NextSection";
 import Hero from "./components/Hero";
@@ -12,44 +12,22 @@ import EventCards from "./components/EventCards";
 import HackathonTracks from "./components/HackathonTracks";
 
 function App() {
-  const scroll = useRef(null);
-
-  // Disable browser zoom
-  useEffect(() => {
-    // Block Ctrl + Scroll wheel zoom
-    const handleWheel = (e) => {
-      if (e.ctrlKey) {
-        e.preventDefault();
-      }
-    };
-
-    // Block Ctrl + Plus/Minus keyboard zoom
-    const handleKeydown = (e) => {
-      if (
-        e.ctrlKey &&
-        (e.key === "+" || e.key === "-" || e.key === "=" || e.key === "0")
-      ) {
-        e.preventDefault();
-      }
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("keydown", handleKeydown);
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("keydown", handleKeydown);
-    };
-  }, []);
-
   return (
     <div className="overflow-hidden">
       <Navbar />
       <Hero />
-      <div id="blue" className="relative w-full">
-        <img src="/long_blue_bg_clouds.png" alt="" className="w-full block" />
+      {/* Scroll Handle - separate from NextSection for z-index control */}
+      <div className="relative w-full z-40 pointer-events-none" style={{ height: 0 }}>
+        <img
+          src="scroll_handle.svg"
+          className="w-[50%] absolute -top-5 sm:-top-15 right-1/4"
+          alt="Scroll Handle"
+        />
+      </div>
+      <div id="blue" className="relative w-full z-20">
+        <img src="/long_blue_bg_clouds.png" alt="" className="w-full block relative z-0" />
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-10">
           <NextSection />
           <PrizeCards />
           <TimelineSection />
@@ -100,7 +78,7 @@ function App() {
             {/* Background Image - Full width, fills remaining space */}
             <img
               src="/oogwayback.png"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover z-0"
               alt="Background"
             />
             {/* Small Image on top - centered */}

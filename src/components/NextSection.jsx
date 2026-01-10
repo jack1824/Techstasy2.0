@@ -9,12 +9,6 @@ function NextSection() {
   return (
     <section className=" relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center">
       <div ref={scroll} id="scroll">
-        <img
-          src="scroll_handle.svg "
-          className="w-[50%] absolute -top-5 sm:-top-15 right-1/4 z-20"
-          id="scroll"
-          alt=""
-        />
         <div className="w-[50%] absolute top-0 sm:-top-10 right-1/4 z-10 flex justify-center items-center">
           <img src="scroll_paper.svg " className="" id="scroll" alt="" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-4 w-full">
