@@ -97,17 +97,17 @@ function Cards({ title, description, date, day }) {
     >
       {/* Top Meta Info */}
       <div className="mb-2 sm:mb-8">
-        <span className="block text-[4vw] md:text-2xl font-medium tracking-[0.2em] text-white/50 uppercase">
+        <span className="block text-[4vw] md:text-2xl font-medium tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-red-600 uppercase">
           {day}
         </span>
-        <span className="block text-[5vw] md:text-3xl font-light text-white/80">
+        <span className="block text-[5vw] md:text-3xl font-light text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-orange-300 to-red-400">
           {date}
         </span>
       </div>
 
       {/* Main Title - Scaled for impact */}
       <h3
-        className="text-[8vw] md:text-7xl lg:text-8xl font-black text-white 
+        className="text-[8vw] md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-amber-500 to-red-700 drop-shadow-[0_0_30px_rgba(251,191,36,0.5)] 
                  leading-tight tracking-tight max-w-5xl"
       >
         {title}
@@ -117,7 +117,7 @@ function Cards({ title, description, date, day }) {
       <div className="w-24 h-1 bg-linear-to-r from-transparent via-white/40 to-transparent my-2 sm:my-10" />
 
       {/* Description - Larger body text */}
-      <p className="text-[3vw] md:text-3xl text-white/70 max-w-3xl font-light leading-relaxed">
+      <p className="text-[3vw] md:text-3xl text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-orange-300 to-red-400 max-w-3xl font-light leading-relaxed">
         {description}
       </p>
 

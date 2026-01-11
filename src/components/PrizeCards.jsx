@@ -6,7 +6,7 @@ function PrizeCards() {
       <img
         src="PRIZE.png"
         alt="Prize"
-        className="w-full object-fill z-50"
+        className="w-full object-fill "
         // style={{ transform: "scale(1.25)" }}
       />
     </div>

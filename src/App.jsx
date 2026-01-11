@@ -13,15 +13,19 @@ import HackathonTracks from "./components/HackathonTracks";
 import Timeline from "./components/Timeline";
 import BlueSection from "./components/BlueSection";
 import PinkSection from "./components/PinkSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="overflow-hidden">
-      <Navbar />
-      <Hero />
-      <BlueSection />
-      <PinkSection />
-    </div>
+    <>
+      <div className="overflow-hidden">
+        <Navbar />
+        <Hero />
+        <BlueSection />
+        <PinkSection />
+      </div>
+      <Footer />
+    </>
   );
 }
 

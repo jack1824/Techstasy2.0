@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import Lenis from "@studio-freight/lenis";
 
 const lenis = new Lenis({
-  duration: 3,
+  duration: 1.5,
   damping: 0.85,
 });
 
