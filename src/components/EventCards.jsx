@@ -45,7 +45,6 @@ function EventCards() {
         end: "bottom center",
         scrub: true,
         toggleActions: "play none none none",
-        // markers: true, // Remove in production
       },
     });
     EventTl.fromTo(
