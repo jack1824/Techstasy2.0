@@ -19,7 +19,7 @@ function TransitionClouds({ scroll, lantern }) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "#clouds",
-          start: "top bottom",
+          start: `top ${window.innerWidth < 640 ? "80%" : "bottom"}`,
           end: "bottom ",
           scrub: true,
           toggleActions: "play none none reverse",
@@ -68,7 +68,7 @@ function TransitionClouds({ scroll, lantern }) {
       tl.fromTo(
         lantern.current,
         {
-          y: 400,
+          y: window.innerWidth < 640 ? 70 : 200,
           ease: "sine.out",
           duration: 3,
         },
