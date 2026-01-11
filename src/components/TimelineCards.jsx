@@ -59,7 +59,6 @@ function TimelineCards({ TimelineRef }) {
           pin: true,
           scrub: 2,
           anticipatePin: 1,
-          markers: true,
         },
       },
       { scope: TimelineRef }
