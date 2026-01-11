@@ -107,7 +107,7 @@ function Hero() {
   return (
     <div
       ref={container}
-      className="relative w-full h-screen bg-[url(./techstacy_background.png)] bg-no-repeat bg-cover bg-center flex justify-center items-center z-20"
+      className="relative w-full h-screen bg-[url(https://res.cloudinary.com/dgo97ti5u/image/upload/v1768127958/techstacy_background_i5omkk.png)] bg-no-repeat bg-cover bg-center flex justify-center items-center z-20"
     >
       <div
         id="title"
