@@ -7,7 +7,7 @@ function NextSection() {
   const lantern = useRef(null);
   const { days, hours, minutes, seconds } = useCountdownToMarch112026();
   return (
-    <section className=" relative w-full h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center">
+    <section className=" relative w-full h-[50vw] sm:h-screen bg-no-repeat bg-center bg-contain bg-fixed flex justify-center items-center">
       <div ref={scroll} id="scroll">
         <img
           src="scroll_handle.svg "

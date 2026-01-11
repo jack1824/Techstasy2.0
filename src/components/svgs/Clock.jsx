@@ -1,12 +1,13 @@
 import * as React from "react";
-const Clock = (props) => (
+const Clock = ({ w, h, props }) => (
   <svg
-    width={612}
-    height={408}
+    width={w || 612}
+    height={h || 408}
     viewBox="0 0 612 408"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
+    className=""
     {...props}
   >
     <g id="Group 7">

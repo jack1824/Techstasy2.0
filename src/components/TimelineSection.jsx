@@ -15,13 +15,21 @@ function TimelineSection() {
     // GSAP animations can be added here if needed in the future
   });
   return (
-    <section className="relative w-full h-screen flex justify-center items-center py-20">
+    <section className="relative w-full h-[50vw] sm:h-screen flex justify-center items-center py-20">
       <img
-        className="absolute top-0 left-0"
-        src="./timeLine_props.svg"
+        className="absolute top-0 left-0 object-contain z-10 object-center w-1/2 "
+        src="./red_tree.svg"
         alt=""
       />
-      <Clock />
+      <img
+        className="absolute bottom-0  w-full object-contain z-10 object-center"
+        src="./TIMELINE_text.svg"
+        alt=""
+      />
+      <Clock
+        className={""}
+        w={window.innerWidth < 640 ? 220 : window.innerWidth < 1024 ? 330 : 612}
+      />
     </section>
   );
 }
