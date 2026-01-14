@@ -29,7 +29,7 @@ function HackathonTracks() {
         start: "top center", // More forgiving on mobile
         end: "bottom 20%",
         scrub: 1,
-        markers: true, // Keep false in production
+        // markers: true, // Keep false in production
       },
     });
 
