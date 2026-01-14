@@ -1,6 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 function EventCards() {
   const events = [
@@ -8,7 +12,7 @@ function EventCards() {
       id: 1,
       name: "Hackstasy",
       image: "/Hackstasy.png",
-      link: "/hackstasy", //add link here
+      link: "/hackstasy",
     },
     {
       id: 2,
@@ -30,9 +34,7 @@ function EventCards() {
     },
   ];
 
-  //idhar hi links add krne hai
   const handleClick = (link) => {
-    // Future: Use react-router navigate here
     console.log("Navigate to:", link);
     // window.location.href = link;
   };
@@ -41,28 +43,30 @@ function EventCards() {
     const EventTl = gsap.timeline({
       scrollTrigger: {
         trigger: "#eventBtns",
-        start: `top 60%`,
-        end: "bottom center",
-        scrub: true,
+        start: "top 70%",
+        end: "top 30%",
+        scrub: 1,
         toggleActions: "play none none none",
+        // markers: true, // Remove in production
       },
     });
+
     EventTl.fromTo(
       "#eventBtns button",
       {
-        x: (i) => (i === 0 ? -200 : 200), // Less extreme starting position
+        x: (i) => (i % 2 === 0 ? "-30%" : "30%"), // Percentage-based for responsiveness
         opacity: 0,
-        scale: 0.8,
-        rotationY: (i) => (i === 0 ? -15 : 15), // Subtle 3D effect
+        scale: 0.85,
+        rotationY: (i) => (i % 2 === 0 ? -10 : 10),
       },
       {
         x: 0,
         opacity: 1,
         scale: 1,
         rotationY: 0,
-        duration: 0.8,
-        ease: "back.out(1.2)", // Slight overshoot for energy
-        stagger: 0.5,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.15, // Much smaller stagger for scrub animations
       }
     );
   });
@@ -71,7 +75,7 @@ function EventCards() {
     <div className="w-full flex justify-center items-center py-20">
       <div
         id="eventBtns"
-        className="grid grid-cols-2 gap-6 md:gap-30 max-w-5xl px-4"
+        className="grid grid-cols-2 gap-4 md:gap-8 max-w-5xl px-4"
       >
         {events.map((event) => (
           <button
@@ -84,7 +88,6 @@ function EventCards() {
               alt={event.name}
               className="w-full h-auto object-cover"
             />
-            {/* Hover overlay */}
           </button>
         ))}
       </div>

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import HackathonTracks from "./HackathonTracks";
 
 function HackathonTracksSection() {
+  
   return (
-    <div>
+    <div >
       <img
         src="/hk tracks.png"
         className="w-full h-auto object-cover object-center"
         alt="HK Tracks"
       />
-      <HackathonTracks />
+      <HackathonTracks  />
     </div>
   );
 }
