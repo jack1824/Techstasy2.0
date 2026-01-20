@@ -16,14 +16,14 @@ function OogwaySection() {
   return (
     <div className="relative w-full h-auto">
       <img
-        src="/oogwayback.png"
+        src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768929010/oogwayback_x07zhu.png"
         className="w-full h-auto object-cover object-center bg-no-repeat"
         alt="Background"
       />
 
       <img
         id="oogwayImg"
-        src="/oogwayq.png"
+        src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768929019/oogwayq_evyrtr.png"
         className=" absolute top-0 sm:top-100 sm:right-1/3  h-auto z-10 "
         alt="Oogway Quote"
       />
