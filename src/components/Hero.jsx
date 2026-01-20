@@ -111,9 +111,9 @@ function Hero() {
     >
       <div
         id="title"
-        className="relative flex justify-center items-center mt-[10%]"
+        className="relative flex justify-center items-center max-w-[80%] md:max-w-[50%]"
       >
-        <img src="techstacy_title.svg" alt="" />
+        <img src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768931079/techstasyTitle_bxsk8z.png" alt="" />
       </div>
 
       <div
