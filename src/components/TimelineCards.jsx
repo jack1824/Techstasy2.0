@@ -31,7 +31,6 @@ const timelineData = [
     date: "March 20, 2024",
     phase: "Phase 4",
   },
-  
 ];
 
 function TimelineCards({ TimelineRef }) {
@@ -41,7 +40,7 @@ function TimelineCards({ TimelineRef }) {
     () => {
       // Respect reduced motion preference
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (prefersReducedMotion) return;
@@ -95,13 +94,13 @@ function TimelineCards({ TimelineRef }) {
         }
       });
     },
-    { scope: TimelineRef }
+    { scope: TimelineRef },
   );
 
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8  overflow-hidden bg-[url(./timeline_bg.png)] bg-contain bg-no-repeat  bg-bottom"
+      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8  overflow-hidden bg-[url(https://res.cloudinary.com/dgo97ti5u/image/upload/v1769880170/timeline_bg_reeaq3.png)] bg-contain bg-no-repeat  bg-bottom"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
@@ -111,7 +110,7 @@ function TimelineCards({ TimelineRef }) {
 
       <div className="relative max-w-7xl mx-auto">
         {/* Section header */}
-        
+
         {/* Timeline track */}
         <div className="relative">
           {/* Center line - hidden on mobile, visible on md+ */}
@@ -138,10 +137,7 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
   const isEven = index % 2 === 0;
 
   return (
-    <div
-      className="timeline-item relative group"
-      data-index={index}
-    >
+    <div className="timeline-item relative group" data-index={index}>
       {/* Mobile/Tablet layout (< md) */}
       <div className="md:hidden">
         <div className="relative pl-8 pb-12">
@@ -176,12 +172,12 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
           <div className={`${isEven ? "text-right pr-12" : "opacity-0"}`}>
             {isEven && (
               <div className="inline-block text-left">
-                <div className=" backdrop-blur-[5px]  rounded-2xl p-8 hover:border-amber-500/50  transition-all duration-500 shadow-xl">
+                <div className="   rounded-2xl p-8   transition-all duration-500 ">
                   <div className="mb-4">
-                    <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-2">
+                    <span className="inline-block text-l font-semibold tracking-widest text-amber-400 uppercase mb-2">
                       {phase}
                     </span>
-                    <p className="text-sm text-zinc-500">{date}</p>
+                    <p className="text-sm text-black blur">{date}</p>
                   </div>
                   <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                     {title}
@@ -208,12 +204,12 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
           {/* Right side */}
           <div className={`${!isEven ? "pl-12" : "opacity-0"}`}>
             {!isEven && (
-              <div className=" backdrop-blur-[5px]  rounded-2xl p-8 hover:border-amber-500/50  transition-all duration-500 shadow-xl">
+              <div className="rounded-2xl p-8 transition-all duration-500 ">
                 <div className="mb-4">
-                  <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-2">
+                  <span className="inline-block text-l font-semibold tracking-widest text-amber-400 uppercase mb-2">
                     {phase}
                   </span>
-                  <p className="text-sm text-zinc-500">{date}</p>
+                  <p className="text-sm text-black blur">{date}</p>
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                   {title}
