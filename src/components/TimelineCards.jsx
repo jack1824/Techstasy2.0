@@ -1,132 +1,233 @@
 import { useRef } from "react";
 import React from "react";
-
-const timelineData = [
-  {
-    title: "Registration Opens",
-    description: "Start your journey by registering for the event.",
-    date: "January 1, 2024",
-    day: "Day 1",
-  },
-  {
-    title: "Workshop Sessions",
-    description: "Participate in various workshops to enhance your skills.",
-    date: "February 15, 2024",
-    day: "Day 2",
-  },
-  {
-    title: "Hackathon Begins",
-    description: "Kick off the hackathon and start building your projects.",
-    date: "March 10, 2024",
-    day: "Day 3",
-  },
-  {
-    title: "Project Submission",
-    description: "Submit your projects for evaluation.",
-    date: "March 20, 2024",
-    day: "Day 4",
-  },
-];
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const timelineData = [
+  {
+    title: "Registration Opens",
+    description: "Start your journey by registering for the event.",
+    date: "January 1, 2024",
+    phase: "Phase 1",
+  },
+  {
+    title: "Workshop Sessions",
+    description: "Participate in various workshops to enhance your skills.",
+    date: "February 15, 2024",
+    phase: "Phase 2",
+  },
+  {
+    title: "Hackathon Begins",
+    description: "Kick off the hackathon and start building your projects.",
+    date: "March 10, 2024",
+    phase: "Phase 3",
+  },
+  {
+    title: "Project Submission",
+    description: "Submit your projects for evaluation.",
+    date: "March 20, 2024",
+    phase: "Phase 4",
+  },
+  
+];
+
 function TimelineCards({ TimelineRef }) {
   const sectionRef = useRef(null);
-  const trackRef = useRef(null);
 
-  useGSAP(() => {
-    const cards = gsap.utils.toArray(".timeline-card");
+  useGSAP(
+    () => {
+      // Respect reduced motion preference
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
 
-    gsap.to(
-      trackRef.current,
-      {
-        x: -100 * (cards.length - 1) + "%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: `top ${
-            window.innerWidth < 640
-              ? "40%"
-              : window.innerWidth < 1024
-              ? "20%"
-              : "top"
-          }`,
-          end: () => `+=${window.innerWidth * cards.length}`,
-          pin: true,
-          scrub: 2,
-          anticipatePin: 1,
-        },
-      },
-      { scope: TimelineRef }
-    );
-  });
+      if (prefersReducedMotion) return;
+
+      const cards = gsap.utils.toArray(".timeline-item");
+
+      cards.forEach((card, index) => {
+        // Stagger fade + slide animation on scroll enter
+        gsap.from(card, {
+          opacity: 0,
+          y: 80,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            end: "top 60%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        // Animate the connecting line
+        const line = card.querySelector(".timeline-line");
+        if (line) {
+          gsap.from(line, {
+            scaleY: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+
+        // Animate the phase indicator
+        const phase = card.querySelector(".phase-indicator");
+        if (phase) {
+          gsap.from(phase, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+      });
+    },
+    { scope: TimelineRef }
+  );
 
   return (
     <section
       ref={sectionRef}
-      id="timeline-cards"
-      className="relative sm:h-screen overflow-hidden"
+      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8  overflow-hidden bg-[url(./timeline_bg.png)] bg-contain bg-no-repeat  bg-bottom"
     >
-      <div ref={trackRef} className="flex flex-row h-full w-fit">
-        {timelineData.map((item, index) => (
-          <Cards
-            key={index}
-            title={item.title}
-            description={item.description}
-            date={item.date}
-            day={item.day}
-          />
-        ))}
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto">
+        {/* Section header */}
+        
+        {/* Timeline track */}
+        <div className="relative">
+          {/* Center line - hidden on mobile, visible on md+ */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-amber-500/30 to-transparent -translate-x-1/2" />
+
+          {/* Timeline items */}
+          <div className="space-y-12 md:space-y-24">
+            {timelineData.map((item, index) => (
+              <TimelineItem
+                key={index}
+                {...item}
+                index={index}
+                isLast={index === timelineData.length - 1}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-export default TimelineCards;
+function TimelineItem({ title, description, date, phase, index, isLast }) {
+  const isEven = index % 2 === 0;
 
-function Cards({ title, description, date, day }) {
   return (
     <div
-      className="timeline-card shrink-0 w-[80vw] sm:h-screen p-4 md:p-16 
-                   
-                flex flex-col justify-center items-center text-center font-kungfu  min-h-[80vw]"
+      className="timeline-item relative group"
+      data-index={index}
     >
-      {/* Top Meta Info */}
-      <div className="mb-2 sm:mb-8">
-        <span className="block text-[4vw] md:text-2xl font-medium tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-red-600 uppercase">
-          {day}
-        </span>
-        <span className="block text-[5vw] md:text-3xl font-light text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-orange-300 to-red-400">
-          {date}
-        </span>
+      {/* Mobile/Tablet layout (< md) */}
+      <div className="md:hidden">
+        <div className="relative pl-8 pb-12">
+          {/* Vertical line connector */}
+          {!isLast && (
+            <div className="timeline-line absolute left-[11px] top-6 bottom-0 w-px bg-gradient-to-b from-amber-500/40 to-transparent origin-top" />
+          )}
+
+          {/* Phase indicator dot */}
+          <div className="phase-indicator absolute left-0 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-amber-400 to-red-500 shadow-lg shadow-amber-500/50 ring-4 ring-black" />
+
+          {/* Card content */}
+          <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:border-amber-500/50 transition-colors duration-300">
+            <div className="mb-3">
+              <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-1">
+                {phase}
+              </span>
+              <p className="text-sm text-zinc-500">{date}</p>
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
+              {title}
+            </h3>
+            <p className="text-zinc-400 leading-relaxed">{description}</p>
+          </div>
+        </div>
       </div>
 
-      {/* Main Title - Scaled for impact */}
-      <h3
-        className="text-[8vw] md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-amber-500 to-red-700 drop-shadow-[0_0_30px_rgba(251,191,36,0.5)] 
-                 leading-tight tracking-tight max-w-5xl"
-      >
-        {title}
-      </h3>
+      {/* Desktop layout (md+) - Alternating left/right */}
+      <div className="hidden md:block">
+        <div className="relative grid grid-cols-2 gap-8 items-center">
+          {/* Left side */}
+          <div className={`${isEven ? "text-right pr-12" : "opacity-0"}`}>
+            {isEven && (
+              <div className="inline-block text-left">
+                <div className=" backdrop-blur-[5px]  rounded-2xl p-8 hover:border-amber-500/50  transition-all duration-500 shadow-xl">
+                  <div className="mb-4">
+                    <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-2">
+                      {phase}
+                    </span>
+                    <p className="text-sm text-zinc-500">{date}</p>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                    {title}
+                  </h3>
+                  <p className="text-white/80 text-lg leading-relaxed">
+                    {description}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
 
-      {/* Divider Decor */}
-      <div className="w-24 h-1 bg-linear-to-r from-transparent via-white/40 to-transparent my-2 sm:my-10" />
+          {/* Center marker */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="phase-indicator relative">
+              <div className="w-4 h-4 rounded-full bg-gradient-to-br from-amber-400 to-red-500 shadow-lg shadow-amber-500/50 ring-4 ring-black" />
+              {/* Connecting line to next item */}
+              {!isLast && (
+                <div className="timeline-line absolute left-1/2 top-full w-px h-24 bg-gradient-to-b from-amber-500/40 to-transparent origin-top -translate-x-1/2" />
+              )}
+            </div>
+          </div>
 
-      {/* Description - Larger body text */}
-      <p className="text-[3vw] md:text-3xl text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 via-orange-300 to-red-400 max-w-3xl font-light leading-relaxed">
-        {description}
-      </p>
-
-      {/* Visual Hint for Scrolling */}
-      <div className="absolute bottom-10 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-white/60 rounded-full" />
+          {/* Right side */}
+          <div className={`${!isEven ? "pl-12" : "opacity-0"}`}>
+            {!isEven && (
+              <div className=" backdrop-blur-[5px]  rounded-2xl p-8 hover:border-amber-500/50  transition-all duration-500 shadow-xl">
+                <div className="mb-4">
+                  <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-2">
+                    {phase}
+                  </span>
+                  <p className="text-sm text-zinc-500">{date}</p>
+                </div>
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                  {title}
+                </h3>
+                <p className="text-white/80 text-lg leading-relaxed">
+                  {description}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default TimelineCards;

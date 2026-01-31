@@ -3,11 +3,10 @@ import TimelineCards from "./TimelineCards";
 import TimelineSection from "./TimelineSection";
 
 function Timeline() {
-  const Timeline = useRef(null);
   return (
-    <div ref={Timeline}>
+    <div className="">
       <TimelineSection />
-      <TimelineCards TimelineRef={Timeline}/>
+      <TimelineCards />
     </div>
   );
 }

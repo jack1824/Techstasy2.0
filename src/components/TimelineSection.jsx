@@ -16,13 +16,19 @@ function TimelineSection() {
   });
   return (
     <section className="relative w-full h-[50vw] sm:h-screen flex justify-center items-center py-20">
+
+      <img
+        className="absolute  object-cover z-10 object-center w-full "
+        src="./Timeline_clouds.png"
+        alt=""
+      />
       <img
         className="absolute top-0 left-0 object-contain z-10 object-center w-1/2 "
         src="./red_tree.svg"
         alt=""
       />
       <img
-        className="absolute bottom-0  w-full object-contain z-10 object-center"
+        className="absolute bottom-0  w-[80%] object-contain z-10 object-center"
         src="./TIMELINE_text.svg"
         alt=""
       />

@@ -32,12 +32,28 @@ function NextSection() {
       </div>
       <div ref={lantern} id="lanternContain" className="relative w-full h-full">
         <img
-          src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768928313/lantern_prop_nj1wq4.png "
+          src="./lantern.svg "
           className="absolute w-full object-cover z-5 top-10"
           id="lantern"
           alt=""
         />
       </div>
+      {/* <div ref={lantern} id="lanternContain" className="relative w-full h-full">
+        <img
+          src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768928313/lantern_prop_nj1wq4.png "
+          className="absolute w-full object-cover z-5 top-10"
+          id="lantern"
+          alt=""
+        />
+      </div> */}
+
+      <img
+        src="./Scroll_clouds.png "
+        className="absolute w-full object-cover"
+        id="lantern"
+        alt=""
+      />
+
       <TransitionClouds scroll={scroll} lantern={lantern} />
 
       {/* Prize Image */}
