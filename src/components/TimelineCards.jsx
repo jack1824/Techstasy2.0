@@ -174,10 +174,10 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
               <div className="inline-block text-left">
                 <div className="   rounded-2xl p-8   transition-all duration-500 ">
                   <div className="mb-4">
-                    <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-2">
+                    <span className="inline-block text-l font-semibold tracking-widest text-amber-400 uppercase mb-2">
                       {phase}
                     </span>
-                    <p className="text-sm text-zinc-500">{date}</p>
+                    <p className="text-sm text-black blur">{date}</p>
                   </div>
                   <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                     {title}
@@ -204,12 +204,12 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
           {/* Right side */}
           <div className={`${!isEven ? "pl-12" : "opacity-0"}`}>
             {!isEven && (
-              <div className="   rounded-2xl p-8   transition-all duration-500 ">
+              <div className="rounded-2xl p-8 transition-all duration-500 ">
                 <div className="mb-4">
-                  <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-2">
+                  <span className="inline-block text-l font-semibold tracking-widest text-amber-400 uppercase mb-2">
                     {phase}
                   </span>
-                  <p className="text-sm text-zinc-500">{date}</p>
+                  <p className="text-sm text-black blur">{date}</p>
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                   {title}
