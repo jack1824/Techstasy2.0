@@ -77,7 +77,7 @@ function Navbar() {
   return (
     <nav
       ref={navbar}
-      className="flex justify-between items-center py-4 text-white text-lg font-semibold fixed w-full z-50"
+      className="flex justify-between items-center py-4 text-white text-lg font-semibold fixed w-full z-50 items-start pt-0"
     >
       {/* Logo - Left Side */}
       <a href="#" className="">
@@ -90,7 +90,7 @@ function Navbar() {
       </a>
 
       {/* Floating Navbar Buttons - Right Side */}
-      <div className="hidden md:flex justify-end items-center gap-0 lg:gap-1 flex-1 mr-8">
+      <div className="hidden md:flex justify-end items-start gap-0 lg:gap-1 flex-1 mr-8 pt-0">
         {navItems.map((item, index) => (
           <a
             key={index}
