@@ -71,7 +71,7 @@ function Navbar() {
             key={index}
             className="nav-item cursor-pointer transition-all duration-300 hover:scale-110"
           >
-            <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-red-600 bg-clip-text text-transparent hover:from-yellow-300 hover:via-amber-400 hover:to-red-500 font-extrabold drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]">
+            <span className="bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent hover:from-gree-300 hover:to-gree-400 font-extrabold drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]">
               {item}
             </span>
           </li>

@@ -4,7 +4,7 @@ import TimelineSection from "./TimelineSection";
 
 function Timeline() {
   return (
-    <div className="">
+    <div className="" id="timeline">
       <TimelineSection />
       <TimelineCards />
     </div>

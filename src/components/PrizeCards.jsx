@@ -2,7 +2,7 @@ import React from "react";
 
 function PrizeCards() {
   return (
-    <div className="w-full h-[100vw] sm:h-auto  flex justify-center items-center ">
+    <div className="w-full h-[100vw] sm:h-auto  flex justify-center items-center " id="prizes">
       <img
         src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768928534/PRIZE_xj2jc5.png"
         alt="Prize"
