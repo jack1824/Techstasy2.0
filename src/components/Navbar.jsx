@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import StaggeredMenu from "./StaggeredMenu/StaggeredMenu";
 
 function Navbar() {
   const navbar = useRef(null);
@@ -75,40 +76,45 @@ function Navbar() {
   };
 
   return (
-    <nav
-      ref={navbar}
-      className="flex justify-between items-center py-4 text-white text-lg font-semibold fixed w-full z-50 items-start pt-0"
-    >
-      {/* Logo - Left Side */}
-      <a href="#" className="">
-        <img
-          className="h-fit w-[40vw] md:w-auto"
-          id="staff"
-          src="staff_code.png"
-          alt="Staff Code Logo"
-        />
-      </a>
+    <>
+      <nav
+        ref={navbar}
+        className="flex justify-between items-center py-4 text-white text-lg font-semibold fixed w-full z-50 items-start pt-0"
+      >
+        {/* Logo - Left Side */}
+        <a href="#" className="">
+          <img
+            className="h-fit w-[40vw] md:w-auto"
+            id="staff"
+            src="staff_code.png"
+            alt="Staff Code Logo"
+          />
+        </a>
 
-      {/* Floating Navbar Buttons - Right Side */}
-      <div className="hidden md:flex justify-end items-start gap-0 lg:gap-1 flex-1 mr-8 pt-0">
-        {navItems.map((item, index) => (
-          <a
-            key={index}
-            href={item.id}
-            onClick={(e) => handleNavClick(e, item.id)}
-            ref={(el) => (navButtons.current[index] = el)}
-            className={`group relative cursor-pointer transition-transform duration-300 hover:scale-125 ${item.scale || ""} ${item.gap || ""}`}
-            title={item.name}
-          >
-            <img
-              src={`/navbar/${item.image}`}
-              alt={item.name}
-              className={`h-32 w-32 lg:h-48 lg:w-48 object-contain drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(251,191,36,0.8)] ${item.scale || ""}`}
-            />
-          </a>
-        ))}
-      </div>
-    </nav>
+        {/* Floating Navbar Buttons - Right Side (Desktop Only) */}
+        <div className="hidden md:flex justify-end items-start gap-0 lg:gap-1 flex-1 mr-8 pt-0">
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={item.id}
+              onClick={(e) => handleNavClick(e, item.id)}
+              ref={(el) => (navButtons.current[index] = el)}
+              className={`group relative cursor-pointer transition-transform duration-300 hover:scale-125 ${item.scale || ""} ${item.gap || ""}`}
+              title={item.name}
+            >
+              <img
+                src={`/navbar/${item.image}`}
+                alt={item.name}
+                className={`h-32 w-32 lg:h-48 lg:w-48 object-contain drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(251,191,36,0.8)] ${item.scale || ""}`}
+              />
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <StaggeredMenu />
+    </>
   );
 }
 
