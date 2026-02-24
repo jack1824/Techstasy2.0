@@ -23,7 +23,7 @@ function NextSection() {
             </h2>
 
             <div className="bg-white border-4 border-black rounded-full md:px-5 md:py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <span className="text-[2.8vw] md:text-3xl font-black tracking-wide font-kungfu blur">
+              <span className="text-[2.8vw] md:text-3xl font-black tracking-wide font-kungfu">
                 {days}D {hours}H {minutes}M {seconds}S
               </span>
             </div>
