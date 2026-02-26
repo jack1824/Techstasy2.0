@@ -11,7 +11,12 @@ function Navbar() {
     { name: "Home", image: "home.png", id: "#home" },
     { name: "Timeline", image: "timeline.png", id: "#timeline" },
     { name: "Tracks", image: "tracks.png", id: "#tracks" },
-    { name: "Sponsors", image: "sponsors.png", id: "#sponsors", scale: "scale-92" },
+    {
+      name: "Sponsors",
+      image: "sponsors.png",
+      id: "#sponsors",
+      scale: "scale-92",
+    },
     { name: "Contact", image: "contact.png", id: "#contact", gap: "-mx-2" },
   ];
 
@@ -31,7 +36,7 @@ function Navbar() {
           scale: 1,
           duration: 1.5,
           ease: "power3.out",
-        }
+        },
       );
 
       // Floating animation for each nav button
@@ -51,7 +56,7 @@ function Navbar() {
             duration: 0.8,
             ease: "power3.out",
             delay: 0.2 + index * 0.1,
-          }
+          },
         );
 
         // Continuous floating animation
@@ -64,7 +69,7 @@ function Navbar() {
         });
       });
     },
-    { scope: navbar }
+    { scope: navbar },
   );
 
   const handleNavClick = (e, id) => {
@@ -79,7 +84,7 @@ function Navbar() {
     <>
       <nav
         ref={navbar}
-        className="flex justify-between items-center py-4 text-white text-lg font-semibold fixed w-full z-50 items-start pt-0"
+        className="flex justify-between items-center py-4  text-white text-lg font-semibold fixed w-full z-50 items-start pt-0"
       >
         {/* Logo - Left Side */}
         <a href="#" className="">
@@ -92,20 +97,20 @@ function Navbar() {
         </a>
 
         {/* Floating Navbar Buttons - Right Side (Desktop Only) */}
-        <div className="hidden md:flex justify-end items-start gap-0 lg:gap-1 flex-1 mr-8 pt-0">
+        <div className="hidden md:flex justify-end items-start gap-0 lg:gap-1  flex-1 mr-8 pt-0">
           {navItems.map((item, index) => (
             <a
               key={index}
               href={item.id}
               onClick={(e) => handleNavClick(e, item.id)}
               ref={(el) => (navButtons.current[index] = el)}
-              className={`group relative cursor-pointer transition-transform duration-300 hover:scale-125 ${item.scale || ""} ${item.gap || ""}`}
+              className={`group relative cursor-pointer transition-transform duration-300  hover:scale-125 ${item.scale || ""} ${item.gap || ""}`}
               title={item.name}
             >
               <img
                 src={`/navbar/${item.image}`}
                 alt={item.name}
-                className={`h-32 w-32 lg:h-48 lg:w-48 object-contain drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(251,191,36,0.8)] ${item.scale || ""}`}
+                className={`h-32 w-32 lg:w-48 object-contain drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(251,191,36,0.8)] ${item.scale || ""}`}
               />
             </a>
           ))}

@@ -10,25 +10,25 @@ const timelineData = [
   {
     title: "Registration Opens",
     description: "Start your journey by registering for the event.",
-    date: "January 1, 2024",
+    date: "MARCH 1, 2026",
     phase: "Phase 1",
   },
   {
     title: "Workshop Sessions",
     description: "Participate in various workshops to enhance your skills.",
-    date: "February 15, 2024",
+    date: "MARCH 12, 2026",
     phase: "Phase 2",
   },
   {
     title: "Hackathon Begins",
     description: "Kick off the hackathon and start building your projects.",
-    date: "March 10, 2024",
+    date: "March 13, 2026",
     phase: "Phase 3",
   },
   {
     title: "Project Submission",
     description: "Submit your projects for evaluation.",
-    date: "March 20, 2024",
+    date: "March 14, 2026",
     phase: "Phase 4",
   },
 ];
