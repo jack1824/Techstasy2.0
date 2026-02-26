@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const TARGET_DATE = new Date("2026-03-012T00:00:00");
+const TARGET_DATE = new Date("2026-03-12T00:00:00");
 
 export function getCountdownToMarch112026(now = new Date()) {
   const millisecondsRemaining = Math.max(TARGET_DATE.getTime() - now.getTime(), 0);
