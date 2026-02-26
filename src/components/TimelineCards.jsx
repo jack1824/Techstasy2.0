@@ -177,7 +177,7 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
                     <span className="inline-block text-l font-semibold tracking-widest text-amber-400 uppercase mb-2">
                       {phase}
                     </span>
-                    <p className="text-sm text-black blur">{date}</p>
+                    <p className="text-sm text-black">{date}</p>
                   </div>
                   <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                     {title}
@@ -209,7 +209,7 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
                   <span className="inline-block text-l font-semibold tracking-widest text-amber-400 uppercase mb-2">
                     {phase}
                   </span>
-                  <p className="text-sm text-black blur">{date}</p>
+                  <p className="text-sm text-black ">{date}</p>
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
                   {title}

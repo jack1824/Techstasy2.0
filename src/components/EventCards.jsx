@@ -12,31 +12,31 @@ function EventCards() {
       id: 1,
       name: "Hackstasy",
       image: "/Hackstasy.png",
-      link: "/hackstasy",
+      link: "https://uptoskills.com/events/58547388?referral=9445398d9f04",
     },
     {
       id: 2,
       name: "Design Forge",
       image: "/design_forge.png",
-      link: "/design-forge",
+      link: "/",
     },
     {
       id: 3,
       name: "Prompt Rachna",
       image: "/promt_rachna.png",
-      link: "/prompt-rachna",
+      link: "/",
     },
     {
       id: 4,
       name: "Tech Manthan",
       image: "/tech_manthan.png",
-      link: "/tech-manthan",
+      link: "https://uptoskills.com/events/58547388?referral=9445398d9f04",
     },
   ];
 
   const handleClick = (link) => {
     console.log("Navigate to:", link);
-    // window.location.href = link;
+    window.location.href = link;
   };
 
   useGSAP(() => {
@@ -67,7 +67,7 @@ function EventCards() {
         duration: 1,
         ease: "power2.out",
         stagger: 0.15, // Much smaller stagger for scrub animations
-      }
+      },
     );
   });
 
