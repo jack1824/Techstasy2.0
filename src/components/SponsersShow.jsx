@@ -5,7 +5,7 @@ const sponsors = {
     {
       name: "codeBlocks",
       logo: "/Sponsors/codeBlocksSponsors.png",
-      link: "https://www.codeblocks.com",
+      link: "https://www.codingblocks.com",
     },
   ],
   silver: [
