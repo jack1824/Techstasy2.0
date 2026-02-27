@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { use } from "react";
+import SponsersShow from "./SponsersShow";
 
 function OogwaySection() {
   useGSAP(() => {
@@ -14,19 +15,21 @@ function OogwaySection() {
   });
 
   return (
-    <div className="relative w-full h-auto">
-      <img
+    <div className="relative w-full  bg-cover bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/dgo97ti5u/image/upload/v1768929010/oogwayback_x07zhu.png')] bg-cover bg-center">
+      {/* <img
         src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768929010/oogwayback_x07zhu.png"
         className="w-full h-auto object-cover object-center bg-no-repeat"
         alt="Background"
-      />
+      /> */}
 
-      <img
+      {/* <img
         id="oogwayImg"
         src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768929019/oogwayq_evyrtr.png"
-        className=" absolute top-0 sm:top-100 sm:right-1/3  h-auto z-10 "
+        className=" m-auto "
         alt="Oogway Quote"
-      />
+      /> */}
+
+      <SponsersShow/>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 function Footer() {
   return (
     // <footer className="relative bg-gradient-to-br from-red-600 via-red-800 to-amber-500 text-white overflow-hidden">
-    <footer className="relative bg-[url(https://res.cloudinary.com/dgo97ti5u/image/upload/v1769885465/red_bg_pat_with_panda_cxpvjs.png)] bg-cover bg-top bg-no-repeat text-white overflow-hidden">
+    <footer id="contact" className="relative bg-[url(https://res.cloudinary.com/dgo97ti5u/image/upload/v1769885465/red_bg_pat_with_panda_cxpvjs.png)] bg-cover bg-top bg-no-repeat text-white overflow-hidden">
       {/* Animated Top Border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300 via-red-600 to-amber-300 animate-pulse"></div>
 
