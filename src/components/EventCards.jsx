@@ -18,13 +18,13 @@ function EventCards() {
       id: 2,
       name: "Design Forge",
       image: "/design_forge.png",
-      link: "/",
+      link: "https://uptoskills.com/events/58547388?referral=9445398d9f04",
     },
     {
       id: 3,
       name: "Prompt Rachna",
       image: "/promt_rachna.png",
-      link: "/",
+      link: "https://uptoskills.com/events/58547388?referral=9445398d9f04",
     },
     {
       id: 4,
