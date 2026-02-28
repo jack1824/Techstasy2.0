@@ -1,106 +1,29 @@
 import React from "react";
+import FourSponsors from "./FourSponsors";
 
-const sponsors = {
-  gold: [
-    {
-      name: "codeBlocks",
-      logo: "/Sponsors/codeBlocksSponsors.png",
-      link: "https://www.codingblocks.com",
-    },
-  ],
-  silver: [
-    {
-      name: "OSEN",
-      logo: "/Sponsors/OsenSponser.png",
-      link: "https://osen.co.in/",
-    },
-  ],
-  platform: [
-    {
-      name: "UptoSkills",
-      logo: "/Sponsors/UptoSkillSponser.png",
-      link: "https://www.uptoskills.com/",
-    },
-  ],
-  general: [
-    {
-      name: "Bitcoin Bharat",
-      logo: "/Sponsors/btcbharatSponser.png",
-      link: "https://btcbharat.com/",
-    },
-    {
-      name: "Commudle",
-      logo: "/Sponsors/CommudleSponser.png",
-      link: "https://commudle.com/",
-    },
-    {
-      name: "XYZ",
-      logo: "/Sponsors/xyzSponser.jpeg",
-      link: "https://xyz.com/",
-    },
-    {
-      name: "Code",
-      logo: "/Sponsors/codeSponser.png",
-      link: "https://code.com/",
-    },
-  ],
-};
+const sponsors = [
+  {
+    name: "codeBlocks",
+    logo: "/sponsor/Top 3 Sponsors.svg",
+    link: "https://www.codingblocks.com",
+  },
+];
 
 function SponsersShow() {
   return (
-    <div className="w-full text-center flex flex-col justify-center items-center gap-20 py-10 text-orange-500">
-      <div className="w-full h-auto flex justify-center flex-col items-center gap-10 py-5 flex-wrap">
-        <h1 className="text-[5vw] md:text-3xl font-bold">GOLD SPONSOR</h1>
-        <div className=" h-auto flex justify-center items-center ">
-          {sponsors.gold.map((sponser) => (
-            <a href={sponser.link} target="_blank" rel="noopener noreferrer">
+    <div className="w-full text-center flex flex-col justify-center items-center gap-8 py-10 text-orange-500">
+      <div className="w-full h-auto flex justify-center items-center">
+        <div className="w-full flex justify-center items-center">
+          {sponsors.map((sponsor) => (
+            <a key={sponsor.name} href={sponsor.link} target="_blank" rel="noopener noreferrer" className="w-full">
               <img
-                className="w-[20vh] md:w-[20vw]"
-                src={sponser.logo}
-                alt={sponser.name}
+                className="w-full h-auto max-h-[125vh]"
+                src={sponsor.logo}
+                alt={sponsor.name}
               />
-            </a>
-          ))}
-        </div>
-      </div>
-      <div className="w-full h-auto flex justify-center flex-col items-center gap-10 py-5 flex-wrap">
-        <h1 className="text-[5vw] md:text-3xl font-bold">SILVER SPONSOR</h1>
-        <div className=" h-auto flex justify-center items-center ">
-          {sponsors.silver.map((sponser) => (
-            <a href={sponser.link} target="_blank" rel="noopener noreferrer">
-              <img
-                className="w-[20vh] md:w-[20vw]"
-                src={sponser.logo}
-                alt={sponser.name}
-              />
-            </a>
-          ))}
-        </div>
-      </div>
-      <div className="w-full h-auto flex flex-col justify-center items-center gap-10 py-5 flex-wrap">
-        <h1 className="text-[5vw] md:text-3xl font-bold">Platform Partner</h1>
-        <div className=" h-auto flex justify-center items-center ">
-          {sponsors.platform.map((sponser) => (
-            <a href={sponser.link} target="_blank" rel="noopener noreferrer">
-              <img
-                className="w-[20vh] md:w-[20vw]"
-                src={sponser.logo}
-                alt={sponser.name}
-              />
-            </a>
-          ))}
-        </div>
-      </div>
-      <div className="w-full flex-col h-auto flex justify-center items-center gap-10 py-5 flex-wrap">
-        <h1 className="text-[5vw] md:text-3xl font-bold">Sponsors</h1>
-        <div className="flex gap-10 justify-center items-center ">
-          {sponsors.general.map((sponser) => (
-            <a href={sponser.link} target="_blank" rel="noopener noreferrer">
-              <img
-                className="w-[15vh] md:w-[15vw]"
-                src={sponser.logo}
-                alt={sponser.name}
-              />
+              <div className="w-full flex justify-center items-center">
+                <FourSponsors />
+              </div>
             </a>
           ))}
         </div>
