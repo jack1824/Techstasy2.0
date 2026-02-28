@@ -28,9 +28,7 @@ const StaggeredMenu = ({
     ];
 
     const socialItems = [
-        { label: 'Instagram', link: '#' },
-        { label: 'Twitter', link: '#' },
-        { label: 'Discord', link: '#' },
+        { label: 'Instagram', link: 'https://www.instagram.com/techstasy__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
     ];
 
     const colors = ['#2d7a7b', '#3a8a8b', '#4ea8a9'];
