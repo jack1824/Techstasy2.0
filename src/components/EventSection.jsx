@@ -12,7 +12,7 @@ function EventSection() {
       <img
         src="https://res.cloudinary.com/dgo97ti5u/image/upload/v1768928804/fightclub_zvcytt.png"
         alt="fight"
-        className="absolute top-10 sm:-top-35 left-0 w-full h-auto z-10 scale-60"
+        className="absolute top-10 sm:-top--2 left-0 w-full h-auto z-10 scale-80"
       />
       <EventCards />
     </div>
