@@ -87,9 +87,10 @@ function Navbar() {
         className="flex justify-between items-center py-4  text-white text-lg font-semibold fixed w-full z-50 items-start pt-0"
       >
         {/* Logo - Left Side */}
-        <a href="#" className="">
+        <a href="#eventSection" onClick={(e) => handleNavClick(e, "#eventSection")} className="">
           <img
-            className="h-fit w-[40vw] md:w-auto"
+            className="h-fit w-[25vw] md:w-[20vw]"
+            style={{ minWidth: '25vw' }}
             id="staff"
             src="staff_code.png"
             alt="Staff Code Logo"
