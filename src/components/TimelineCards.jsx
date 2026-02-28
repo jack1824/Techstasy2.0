@@ -150,17 +150,17 @@ function TimelineItem({ title, description, date, phase, index, isLast }) {
           <div className="phase-indicator absolute left-0 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-amber-400 to-red-500 shadow-lg shadow-amber-500/50 ring-4 ring-black" />
 
           {/* Card content */}
-          <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:border-amber-500/50 transition-colors duration-300">
+          <div className="  rounded-2xl p-6 hover:border-amber-500/50 transition-colors duration-300">
             <div className="mb-3">
               <span className="inline-block text-xs font-semibold tracking-widest text-amber-400 uppercase mb-1">
                 {phase}
               </span>
-              <p className="text-sm text-zinc-500">{date}</p>
+              <p className="text-sm text-white/80">{date}</p>
             </div>
             <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
               {title}
             </h3>
-            <p className="text-zinc-400 leading-relaxed">{description}</p>
+            <p className="text-white/80 leading-relaxed">{description}</p>
           </div>
         </div>
       </div>
