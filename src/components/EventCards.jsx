@@ -18,13 +18,13 @@ function EventCards() {
       id: 2,
       name: "Design Forge",
       image: "/design_forge.png",
-      link: "https://uptoskills.com/events/58547388?referral=9445398d9f04",
+      link: "https://www.commudle.com/communities/csi-srm-ist/events/design-forge",
     },
     {
       id: 3,
       name: "Prompt Rachna",
       image: "/promt_rachna.png",
-      link: "https://uptoskills.com/events/58547388?referral=9445398d9f04",
+      link: "https://www.commudle.com/communities/csi-srm-ist/events/prompt-rachna",
     },
     {
       id: 4,
