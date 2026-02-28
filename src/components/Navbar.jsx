@@ -89,7 +89,7 @@ function Navbar() {
         {/* Logo - Left Side */}
         <a href="#eventSection" onClick={(e) => handleNavClick(e, "#eventSection")} className="">
           <img
-            className="h-fit w-[25vw] md:w-[20vw]"
+            className="h-fit w-[25vh] md:w-[20vw]"
             style={{ minWidth: '25vw' }}
             id="staff"
             src="staff_code.png"

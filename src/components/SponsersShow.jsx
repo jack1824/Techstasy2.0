@@ -4,7 +4,7 @@ import FourSponsors from "./FourSponsors";
 const sponsors = [
   {
     name: "codeBlocks",
-    logo: "/sponsor/Top 3 Sponsors.svg",
+    logo: "/sponsor/Top3_sponsors.png",
     link: "https://www.codingblocks.com",
   },
 ];
@@ -17,13 +17,13 @@ function SponsersShow() {
           {sponsors.map((sponsor) => (
             <a key={sponsor.name} href={sponsor.link} target="_blank" rel="noopener noreferrer" className="w-full">
               <img
-                className="w-full h-auto max-h-[125vh]"
+                className="w-full "
                 src={sponsor.logo}
                 alt={sponsor.name}
               />
-              <div className="w-full flex justify-center items-center">
-                <FourSponsors />
-              </div>
+              
+                <FourSponsors/>
+              
             </a>
           ))}
         </div>
