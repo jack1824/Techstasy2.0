@@ -8,9 +8,8 @@ function Footer() {
       className="relative bg-[url(https://res.cloudinary.com/dgo97ti5u/image/upload/v1772282143/bg_red_pattern_hdwatf.png)] bg-cover bg-top bg-no-repeat text-white overflow-hidden"
     >
 
-      <img className="absolute -right-20 sm:right-0 sm:top-0 sm:scale-90 scale-70 bottom-50" src="/footerPanda.png" alt="" />
       {/* Animated Top Border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300 via-red-600 to-amber-300 animate-pulse"></div>
+      <div className="absolute z-50 top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300 via-red-600 to-amber-300 animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-8 py-16">
         {/* Main Footer Grid */}
@@ -31,11 +30,11 @@ function Footer() {
                 { Icon: Linkedin, label: "LinkedIn" },
               ].map(({ Icon, label }) => (
                 <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
+                key={label}
+                href="#"
+                aria-label={label}
                   className="w-11 h-11 bg-yellow-500/90 border-2 text-red-500 border-amber-400/30 rounded-full flex items-center justify-center hover:bg-amber-400 hover:border-amber-400 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
-                >
+                  >
                   <Icon size={20} />
                 </a>
               ))}
@@ -44,7 +43,7 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-yellow-500 text-3xl font-semibold mb-5">
+            <h3 className="text-yellow-500 z-50 text-3xl font-semibold mb-5">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -70,7 +69,7 @@ function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-yellow-500 text-xl font-semibold mb-5">
+            <h3 className="text-yellow-500 z-50 text-xl font-semibold mb-5">
               Services
             </h3>
             <ul className="space-y-3">
@@ -95,6 +94,7 @@ function Footer() {
           </div>
         </div>
       </div>
+      <img className="absolute z-10 -right-20  lg:right-0 lg:top-0 lg:scale-90 scale-70 sm:bottom-0 bottom-50" src="/footerPanda.png" alt="" />
     </footer>
   );
 }

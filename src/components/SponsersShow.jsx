@@ -35,13 +35,17 @@ function SponsersShow() {
             >
               <img className="w-full " src={sponsor.logo} alt={sponsor.name} />
 
-              <FourSponsors className="hidden md:block" />
+              <FourSponsors className="hidden md:block w-screen" />
 
               <div className="md:hidden flex w-full justify-center items-center gap-8 mt-10 flex-wrap-reverse">
-                <img className="w-1/4" src="/sponsor/BITCOIN BHARAT.svg" alt="" />
+                <img
+                  className="w-1/4"
+                  src="/sponsor/BITCOIN BHARAT.svg"
+                  alt=""
+                />
+                <img className="w-1/4" src="/Sponsors/xyzSponser.jpeg" alt="" />
+                <img className="w-1/4" src="/Sponsors/codeSponser.png" alt="" />
                 <img className="w-1/4" src="/sponsor/commudle.svg" alt="" />
-                <img className="w-1/4" src="/Sponsors/OsenSponser.png" alt="" />
-                <img className="w-1/4" src="/Sponsors/UptoSkillSponser.png" alt="" />
               </div>
             </a>
           ))}
